@@ -10,5 +10,9 @@
     "ecommerce"
   ],
   "author": "Made by Allan Bahr <@madebyallanbahr>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.9.0"
+  }
 }
