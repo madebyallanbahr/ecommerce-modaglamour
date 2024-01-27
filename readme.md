@@ -2,4 +2,4 @@
 
 ---
 
-![Light Theme for Repository](./repo/3x_banner.png)
+![Light Theme for Repository](./repo/3x_banner_light.png.png)
