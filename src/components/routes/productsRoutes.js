@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.json("vendo o carrinho");
+  res.json({
+    message: "Shop is under construction.",
+  });
 });
 
 module.exports = router;
