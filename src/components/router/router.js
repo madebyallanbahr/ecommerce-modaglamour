@@ -5,7 +5,7 @@ const authRoutes = require("../routes/authRoutes");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("home");
+  res.redirect("/auth");
 });
 
 router.use("/auth", authRoutes);
