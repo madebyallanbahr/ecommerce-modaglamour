@@ -9,11 +9,24 @@
   <body>
     <main class="sec-main">
       <section class="sec-logo">
-        <img src="/letter-mg-darkmode.svg" style="width: 5vw" />
+        <img class="logo" src="/letter-mg-darkmode.svg" style="width: 8vw" />
       </section>
       <section class="sec-login">
-        <form class="sec-form">
-          <input placeholder="E-mail" class="email-ipt" type="email" />
+        <form action="/auth" method="post" class="sec-form">
+          <input
+            name="inpmail"
+            placeholder="E-mail"
+            id="inp"
+            class="email-ipt"
+            type="email"
+          />
+          <input
+            name="inppass"
+            placeholder="Password"
+            id="inp"
+            class="pass-ipt"
+            type="password"
+          />
           <input class="login" type="submit" value="Entrar" />
         </form>
       </section>
