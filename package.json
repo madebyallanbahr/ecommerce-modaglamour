@@ -8,7 +8,8 @@
     "dev": "nodemon . "
   },
   "keywords": [
-    "ecommerce"
+    "e-commerce",
+    "web-app"
   ],
   "author": "Made by Allan Bahr <@madebyallanbahr>",
   "license": "MIT",
