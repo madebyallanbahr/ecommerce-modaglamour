@@ -1,20 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter";
-  outline: none;
-  color: #fff;
-  overflow: hidden;
-  transition: 0.25s all ease;
-}
-:root {
-  --secondDark: #1c1e20;
-  --backBlack: #26282a;
-}
+@import url("./default.css");
+
 body {
-  background-color: #eee;
+  background-color: var(--rangoonGreen);
 }
 .sec-main {
   display: flex;
@@ -25,12 +12,11 @@ body {
 .sec-logo {
   width: 40%;
   height: 100vh;
-  background-color: var(--secondDark);
-  border-right: 1px solid #424242;
+  background-color: var(--woodsSmoke);
+  border-right: 1px solid var(--borderUses);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 1px 1px 1px #000;
 }
 .sec-login {
   display: flex;
@@ -38,7 +24,7 @@ body {
   align-items: center;
   width: 60%;
   height: 100vh;
-  background-color: var(--backBlack);
+  background-color: var(--rangoonGreen);
 }
 .sec-form {
   display: flex;
@@ -52,7 +38,7 @@ body {
   width: 25vw;
   height: 6vh;
   background-color: transparent;
-  border: 1px solid #424242;
+  border: 1px solid var(--borderUses);
   border-radius: 5px;
   font-size: 14px;
 }
@@ -65,8 +51,18 @@ body {
   border: none;
   cursor: pointer;
 }
+.register {
+  position: fixed;
+  bottom: 0;
+  right: 80px;
+  margin: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .login:hover,
-#inp:hover {
+#inp:hover,
+.register:hover {
   opacity: 0.5;
 }
 #inp:focus {

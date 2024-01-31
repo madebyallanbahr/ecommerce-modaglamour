@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
 
 const authenticateUser = async (credentials) => {
   if (
-    credentials.email == process.env.LOGIN_EMAIL &&
+    credentials.email == process.env.LOGIN_MAIL &&
     credentials.pass == process.env.LOGIN_PASS
   ) {
     return 200;
