@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+  outline: none;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.25s all ease;
+}
+:root {
+  --secondDark: #1c1e20;
+  --backBlack: #26282a;
+}
+body {
+  background-color: #eee;
+}
+.sec-main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+.sec-logo {
+  width: 40%;
+  height: 100vh;
+  background-color: var(--secondDark);
+  border-right: 1px solid #424242;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px 1px #000;
+}
+.sec-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100vh;
+  background-color: var(--backBlack);
+}
+.sec-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#inp {
+  margin: 15px;
+  padding-left: 20px;
+  width: 25vw;
+  height: 6vh;
+  background-color: transparent;
+  border: 1px solid #424242;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.login {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.login:hover,
+#inp:hover {
+  opacity: 0.5;
+}
+#inp:focus {
+  width: 40vw;
+}
+
+@media (max-width: 1200px) {
+  .sec-main {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .logo {
+    width: 13w;
+  }
+  .sec-logo {
+    height: 300px;
+    width: 100%;
+  }
+  .sec-form {
+    width: 100%;
+    height: 100%;
+  }
+  #inp {
+    width: 50%;
+    height: 7vh;
+  }
+  #inp:focus {
+    width: 75%;
+  }
+  .sec-login {
+    width: 100%;
+    height: 70vh;
+  }
+}
