@@ -14,14 +14,28 @@ class AuthModel {
     let year = d.getFullYear();
     let createdAt = `${year}-${month}-${day}`;
 
-    let sql = `INSERT INTO users(email,pass, created_at)
-    VALUES('${this._credentials.email}', '${this._credentials.password}', '${createdAt}')`;
+    let sql = `INSERT INTO users (email, pass, created_at)
+    SELECT '${this._credentials.email}', '${this._credentials.password}', '${createdAt}'
+    WHERE NOT EXISTS (
+        SELECT * FROM users 
+        WHERE email = '${this._credentials.email}'
+    );`;
 
     const [newUser, _] = await db.execute(sql);
-
+    if (newUser.affectedRows == 0) {
+      return false;
+    }
     return newUser;
   }
-  async checkCredentialsUser() {}
+  async checkCredentialsUser() {
+    let sql = `SELECT * FROM users WHERE EXISTS (SELECT 1 FROM users WHERE email = '${this._credentials.email}' AND pass = '${this._credentials.password}'); `;
+
+    const [user, _] = await db.execute(sql);
+    if (user == "") {
+      return false;
+    }
+    return user;
+  }
 }
 
 module.exports = AuthModel;

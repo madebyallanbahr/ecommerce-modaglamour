@@ -1,7 +1,14 @@
 const Auth = require("../models/Auth");
 
 exports.loginUser = async (req, res, next) => {
-  res.send("Login with user.");
+  let actualUser = new Auth(req.body.inpmail, req.body.inppass);
+
+  actualUser = await actualUser.checkCredentialsUser();
+
+  // console.log(actualUser);
+
+  if (!actualUser) return res.sendStatus(404);
+  return res.sendStatus(302);
 };
 
 exports.registerUser = async (req, res, next) => {
@@ -9,7 +16,7 @@ exports.registerUser = async (req, res, next) => {
 
   user = await user.createNewAuthenticatedUser();
 
-  console.log(user);
-
-  res.send("Created a new user in database");
+  // console.log(user);
+  if (!user) return res.sendStatus(302);
+  return res.sendStatus(201);
 };
