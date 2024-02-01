@@ -7,4 +7,4 @@ Atualmente sendo desenvolvido com Node.js, Express.js e também mySQL.
 
 #### Tecnologias
 
-![Light Theme for Repository](./repo/3x_bannerpng)
+![Light Theme for Repository](./repo/3x_banner.png)
