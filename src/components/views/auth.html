@@ -12,7 +12,7 @@
         <img class="logo" src="/letter-mg-darkmode.svg" />
       </section>
       <section class="sec-login">
-        <form action="/auth" method="post" class="sec-form">
+        <form method="post" class="sec-form">
           <input
             name="inpmail"
             autocomplete="off"
@@ -28,8 +28,18 @@
             class="pass-ipt"
             type="password"
           />
-          <input class="login" type="submit" value="Entrar" />
-          <input class="register" type="submit" value="Registrar" />
+          <input
+            class="login"
+            type="submit"
+            value="Entrar"
+            formaction="auth/login"
+          />
+          <input
+            class="register"
+            type="submit"
+            value="Registrar"
+            formaction="auth/register"
+          />
         </form>
       </section>
     </main>

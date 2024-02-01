@@ -35,7 +35,7 @@ body {
 #inp {
   margin: 15px;
   padding-left: 20px;
-  width: 25vw;
+  width: 30vw;
   height: 6vh;
   background-color: transparent;
   border: 1px solid var(--borderUses);
