@@ -1,8 +1,11 @@
+const authController = require("../controllers/AuthController");
+
 const path = require("path");
 const express = require("express");
 const router = express.Router();
-const authController = require("../controllers/AuthController");
+
 router.use(express.json({ bodyParser: true }));
+
 router.get("/", (req, res) => {
   res.sendFile(path.resolve(path.dirname(__dirname) + "/views/auth.html"));
 });

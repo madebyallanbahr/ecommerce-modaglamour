@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autenticação: Moda Glamour</title>
+    <title>Moda Glamour</title>
     <link rel="stylesheet" href="/css/auth.css" />
   </head>
   <body>
@@ -13,6 +13,7 @@
       </section>
       <section class="sec-login">
         <form method="post" class="sec-form">
+          <h4 class="sec-login-title">Acesse a Plataforma</h4>
           <input
             name="inpmail"
             autocomplete="off"
@@ -20,6 +21,8 @@
             id="inp"
             class="email-ipt"
             type="email"
+            required
+            pattern="/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g"
           />
           <input
             name="inppass"
@@ -27,6 +30,8 @@
             id="inp"
             class="pass-ipt"
             type="password"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
           />
           <input
             class="login"

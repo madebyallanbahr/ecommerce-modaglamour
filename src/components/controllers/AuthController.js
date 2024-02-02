@@ -7,7 +7,7 @@ exports.loginUser = async (req, res, next) => {
 
   console.log(actualUser);
 
-  if (!actualUser) return res.sendStatus(404);
+  if (!actualUser) return res.send("Usuário não existente.");
 
   return res.sendStatus(302);
 };
@@ -17,11 +17,8 @@ exports.registerUser = async (req, res, next) => {
 
   user = await user.createNewAuthenticatedUser();
 
-  // added a hash type in creation of password.
-  // Try to use bcrypto
-
   console.log(user);
-  if (!user) return res.sendStatus(302);
+  if (!user) return res.send("Usuário já existente");
 
   return res.sendStatus(201);
 };
