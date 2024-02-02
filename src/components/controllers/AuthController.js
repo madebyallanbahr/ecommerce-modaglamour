@@ -5,9 +5,10 @@ exports.loginUser = async (req, res, next) => {
 
   actualUser = await actualUser.checkCredentialsUser();
 
-  // console.log(actualUser);
+  console.log(actualUser);
 
   if (!actualUser) return res.sendStatus(404);
+
   return res.sendStatus(302);
 };
 
@@ -16,7 +17,11 @@ exports.registerUser = async (req, res, next) => {
 
   user = await user.createNewAuthenticatedUser();
 
-  // console.log(user);
+  // added a hash type in creation of password.
+  // Try to use bcrypto
+
+  console.log(user);
   if (!user) return res.sendStatus(302);
+
   return res.sendStatus(201);
 };

@@ -15,7 +15,7 @@ pool.execute(sql, (err, result) => {
   if (err) throw err;
 
   result.forEach((res) => {
-    // console.log(res);
+    console.log(res);
   });
 });
 

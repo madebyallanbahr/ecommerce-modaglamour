@@ -84,11 +84,11 @@ body {
     height: 100%;
   }
   #inp {
-    width: 50%;
+    width: 75%;
     height: 6vh;
   }
   #inp:focus {
-    width: 75%;
+    width: 90%;
   }
   .sec-login {
     width: 100%;

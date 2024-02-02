@@ -2,7 +2,6 @@ const db = require("../../db/database");
 
 class AuthModel {
   _credentials;
-
   constructor(email, pass) {
     this._credentials = { email: email, password: pass };
   }
@@ -20,6 +19,8 @@ class AuthModel {
         SELECT * FROM users 
         WHERE email = '${this._credentials.email}'
     );`;
+    if (this._credentials.email == "" && this._credentials.password == "")
+      return false;
 
     const [newUser, _] = await db.execute(sql);
     if (newUser.affectedRows == 0) {
@@ -28,8 +29,7 @@ class AuthModel {
     return newUser;
   }
   async checkCredentialsUser() {
-    let sql = `SELECT * FROM users WHERE EXISTS (SELECT 1 FROM users WHERE email = '${this._credentials.email}' AND pass = '${this._credentials.password}'); `;
-
+    let sql = `SELECT * FROM users WHERE EXISTS (SELECT 1 FROM users WHERE email = '${this._credentials.email}' AND pass = '${this._credentials.password}')`;
     const [user, _] = await db.execute(sql);
     if (user == "") {
       return false;
