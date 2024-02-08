@@ -5,11 +5,10 @@ exports.loginUser = async (req, res, next) => {
 
   actualUser = await actualUser.checkCredentialsUser();
 
-  console.log(actualUser);
+  req.headers.authorization = "123";
 
-  if (!actualUser) return res.send("Usuário não existente.");
-
-  return res.sendStatus(302);
+  if (!actualUser) return res.redirect("/error");
+  return res.redirect("/shop?auth=true");
 };
 
 exports.registerUser = async (req, res, next) => {
@@ -17,8 +16,6 @@ exports.registerUser = async (req, res, next) => {
 
   user = await user.createNewAuthenticatedUser();
 
-  console.log(user);
-  if (!user) return res.send("Usuário já existente");
-
-  return res.sendStatus(201);
+  if (!user) return res.redirect("/error");
+  return res.redirect("/");
 };
