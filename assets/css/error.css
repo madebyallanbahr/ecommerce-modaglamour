@@ -1,10 +1,22 @@
-/* .section-main {
+@import url("./default.css");
+
+.section-main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--woodsSmoke);
+  justify-content: center;
+  align-items: center;
+}
+.title-main,
+.image-main {
+  margin: 5px;
 }
 
-.title-main {
+.span-main {
+  position: absolute;
+  bottom: 0;
+  margin: 25px;
+  color: #999;
 }
-
-.p-main {
-} */
-
-/* TODO Finalizar o styles da rota /error */

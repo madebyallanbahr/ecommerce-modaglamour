@@ -5,17 +5,15 @@ exports.loginUser = async (req, res, next) => {
 
   actualUser = await actualUser.checkCredentialsUser();
 
-  req.headers.authorization = "123";
-
   if (!actualUser) return res.redirect("/error");
-  return res.redirect("/shop?auth=true");
+  return res.redirect("/shop?auth=true&token=123");
 };
 
 exports.registerUser = async (req, res, next) => {
-  let user = new Auth(req.body.inpmail, req.body.inppass);
+  let newUser = new Auth(req.body.inpmail, req.body.inppass);
 
-  user = await user.createNewAuthenticatedUser();
+  newUser = await newUser.createNewAuthenticatedUser();
 
-  if (!user) return res.redirect("/error");
+  if (!newUser) return res.redirect("/error");
   return res.redirect("/");
 };

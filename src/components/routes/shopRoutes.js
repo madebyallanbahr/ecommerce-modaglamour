@@ -2,13 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  if (req.query.auth) {
-    res.json({
+  if (req.query.auth && req.query.token == "123") {
+    return res.json({
       message: "Shop is under construction.",
     });
-  } else {
-    res.redirect("/");
   }
+  return res.redirect("/error");
 });
 
 module.exports = router;
