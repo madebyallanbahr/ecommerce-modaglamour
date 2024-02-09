@@ -1,0 +1,42 @@
+@import url("./default.css");
+
+body {
+  background-color: var(--woodsSmoke);
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rangoonGreen);
+  width: 80px;
+  border-right: 1px solid var(--borderUses);
+  position: absolute;
+  height: 100vh;
+}
+.side-bar-logo {
+  width: 45px;
+  top: 0;
+  position: fixed;
+  margin: 25px;
+}
+.side-bar-item {
+  background-color: var(--newDarkColor);
+  cursor: pointer;
+  margin: 40px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.side-bar-item-user {
+  bottom: 0;
+  background-color: var(--newDarkColor);
+  margin: 40px;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+}
+.side-bar-item:hover,
+.side-bar-item-user:hover {
+  opacity: 0.5;
+}

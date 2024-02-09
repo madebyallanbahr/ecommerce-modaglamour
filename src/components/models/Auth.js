@@ -1,11 +1,14 @@
 const db = require("../../db/database");
+const crypto = require("crypto");
 
 class AuthModel {
   _credentials;
   constructor(email, pass) {
     this._credentials = { email: email, password: pass };
   }
-
+  generateToken = async () => {
+    return crypto.randomBytes(64).toString("hex");
+  };
   async createNewAuthenticatedUser() {
     let d = new Date();
     let day = d.getDate();
@@ -22,11 +25,12 @@ class AuthModel {
     if (this._credentials.email == "" && this._credentials.password == "")
       return false;
 
-    const [newUser, _] = await db.execute(sql);
-    if (newUser.affectedRows == 0) {
+    const [user, _] = await db.execute(sql);
+    if (user.affectedRows == 0) {
       return false;
     }
-    return newUser;
+
+    return user;
   }
   async checkCredentialsUser() {
     let sql = `SELECT * FROM users WHERE EXISTS (SELECT 1 FROM users WHERE email = '${this._credentials.email}' AND pass = '${this._credentials.password}')`;

@@ -1,5 +1,5 @@
 const express = require("express");
-const router = require("./src/components/routes/router");
+const router = require("./src/components/Router");
 const app = express();
 const bodyParser = require("body-parser");
 const port = 3000;

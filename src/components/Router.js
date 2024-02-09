@@ -1,8 +1,8 @@
 const express = require("express");
-const cartRoutes = require("./cartRoutes");
-const productsRoutes = require("./shopRoutes");
-const authRoutes = require("./authRoutes");
-const errorRoutes = require("./error");
+const cartRoutes = require("./routes/Cart");
+const productsRoutes = require("./routes/Shop");
+const authRoutes = require("./routes/Auth");
+const errorRoutes = require("./routes/Error");
 const router = express.Router();
 
 router.get("/", (req, res) => {
